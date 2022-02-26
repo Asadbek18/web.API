@@ -29,7 +29,7 @@ namespace Web.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<AppDbContext>(option => option.UseSqlServer(
+            services.AddDbContext<AppDbContext>(option => option.UseNpgsql(
                 Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddCors(options =>
             {
